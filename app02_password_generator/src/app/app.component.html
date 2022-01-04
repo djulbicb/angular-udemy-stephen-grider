@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-centered">
+      <div class="column is-half">
+
+        <h1 class="title">Password Generator</h1>
+        <input type="text" (input)="setLength($event)" />
+        <div>
+          <label class="checkbox">
+            <input type="checkbox" (change)="setUseLetters($event)" />
+            Use numbers
+          </label>
+        </div>
+        <div>
+          <label class="checkbox">
+            <input type="checkbox" (change)="setUseNumbers($event)" />
+            Use letters
+          </label>
+        </div>
+        <div>
+          <label class="checkbox">
+            <input type="checkbox" (change)="setUseSpecialChars($event)" />
+            Use special characters
+          </label>
+        </div>
+        <hr>
+        <button (click)="generate()">Generate</button>
+        <hr>
+        {{useLetters + " " + useNumbers + " " + getUseSpecialChars() + " " + length}}
+        <hr>
+        <p *ngIf="length > 0 && (useLetters || useNumbers || useSpecialChars)">
+          {{ generated }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
