@@ -1,0 +1,16 @@
+<div class="row">
+  <app-post *ngFor="let post of posts"
+            [title]="post.title"
+            [content]="post.content"
+            [handle]="post.handle"
+            [image]="post.image" 
+  ></app-post>
+</div>
+<hr>
+<div class="row">
+    <app-post [title]="posts[0].title"
+              [content]="posts[0].content"
+              [handle]="posts[0].handle"
+              [image]="posts[0].image"            
+    ></app-post>
+</div>

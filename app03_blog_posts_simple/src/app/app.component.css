@@ -1,0 +1,17 @@
+
+:host {
+    /* Element itself */
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+
+    width: 90%;
+    margin: auto;
+}
+
+app-post {
+    width: 31%;
+}
+
