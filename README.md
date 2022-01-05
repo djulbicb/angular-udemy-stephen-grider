@@ -4,7 +4,10 @@
 npm install -g @angular/cli
 ng new app02_password_generator
 cd app02_password_generator
+
+# ove dve funkcije su identicne
 ng serve --open
+npm start
 ```
 
 ## delete if cant run
@@ -26,6 +29,10 @@ angular.json
             ],
             "scripts": []
           },
+```
+to ili u styles.css
+```
+@import "bulma/css/bulma.css"
 ```
 
 ## things learned
@@ -69,7 +76,7 @@ Falsey and Truthy
 <input type="text" (keydown)="setLength($event)" />
 <input type="text" (input)="setLength($event)" />
 
-# Getting value
+# Getting value from html input
 Checkbox input value
 $event.target.checked
 Textbox Input value
