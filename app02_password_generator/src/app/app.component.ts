@@ -59,6 +59,7 @@ export class AppComponent {
     console.log(">", event.target, this.length);
     const parsed = parseInt(event.target.value);
     if (isNaN(parsed)) {
+      this.length = 0;
       return;
     }
     this.length = parsed;
