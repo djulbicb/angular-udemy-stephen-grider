@@ -1,0 +1,40 @@
+<div class="container pt-4">
+
+  <nav aria-label="Page navigation example" class="mb-4">
+    <ul class="pagination">
+      <li (click)="currentIndex = currentIndex - 1" [ngClass]="{ disabled : currentIndex <= 0 }" class="page-item"><a class="page-link" href="#">Previous</a></li>
+
+      <ng-container *ngFor="let img of images; let i = index;">
+        <li *ngIf="(i < currentIndex + 5) && (i > currentIndex - 5)" [ngClass]="{active : currentIndex === i}" class="page-item">
+          <a class="page-link" href="#" (click)="currentIndex = i">{{i + 1}}</a>
+        </li>
+      </ng-container>
+
+      <li (click)="currentIndex = currentIndex + 1" [ngClass]="{ disabled : currentIndex + 1 >= images.length}" class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
+
+  <div [appClasses]="'orange'" class="card" style="width: 20rem;">
+    <img  [src]="images[currentIndex].url">
+    <div class="card-body">
+      <h5 class="card-title">{{images[currentIndex].title}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+  <p *appFor="3; let i = index; let val = something;">My name is {{val}}</p>
+
+  <div [ngSwitch]="currentIndex">
+    <div *ngSwitchCase="0">
+      Hello
+    </div>
+    <div *ngSwitchCase="0">
+      First page
+    </div>
+    <div *ngSwitchCase="1">
+      This is another page
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+:host {
+    width: 70%;
+    display: flex;
+    margin: auto;
+    margin-top: 2em;
+}
+
+
+.card {
+    width: 100%;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
+.pending {
+    color: gray;
+}

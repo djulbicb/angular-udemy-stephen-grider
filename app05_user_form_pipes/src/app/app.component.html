@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <h1>User form:</h1>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <div>
+        <input type="text" class="form-control" (input)="setName($any($event.target).value)" placeholder="Name"/>
+      </div>
+    </div>
+
+    <div class="col">
+      {{uName | titlecase}}
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <div>
+        <input type="date" class="form-control" (input)="setDate($any($event.target).value)" placeholder="Date"/>
+      </div>
+    </div>
+
+    <div class="col">
+      {{uDate | date : "d MMMM, YYYY"}}
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <div>
+        <input type="text" class="form-control" (input)="setCurrency($any($event.target).value)" placeholder="Currency"/>
+      </div>
+    </div>
+
+    <div class="col">
+      {{uCurrency | currency: "USD"}}
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <div>
+        <input type="text" class="form-control" (input)="setConvert($any($event.target).value)" placeholder="Type some number"/>
+      </div>
+    </div>
+
+    <div class="col">
+      {{uConvert | convert: "x": "10" | number:'1.1-5' }}
+    </div>
+
+    <div *ngIf="(uConvert | convert: '10': '2') > 50">
+      Use pipe in *ngIf
+    </div>
+  </div>
+
+</div>

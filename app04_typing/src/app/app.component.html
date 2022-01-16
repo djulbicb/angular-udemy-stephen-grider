@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">{{title}}</p>
+        <p class="subtitle is-6">@regenbar</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p class="subtitle is-5">Write this text</p>
+      <p>
+        <span [class]="getClass(letter, textUser[i])" *ngFor="let letter of textToWrite.split(''); let i=index">{{letter}}</span>
+      </p>
+      <input class="input is-primary" type="text" (input)="onInput($any($event.target).value)">
+      <div *ngIf="isCorrect" class="input is-primary">
+          <br>
+          Success. Good job!
+      </div>
+    </div>
+  </div>
+</div>
